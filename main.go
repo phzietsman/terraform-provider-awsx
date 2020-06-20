@@ -2,9 +2,11 @@ package main
 
 import (
 	"github.com/hashicorp/terraform-plugin-sdk/plugin"
-	"github.com/hashicorp/terraform-provider-scaffolding/internal/provider"
+	"github.com/phzietsman/terraform-provider-awsx/internal/provider"
 )
 
 func main() {
-	plugin.Serve(&plugin.ServeOpts{ProviderFunc: provider.New})
+	plugin.Serve(&plugin.ServeOpts{
+		ProviderFunc: aws.Provider
+	})
 }
