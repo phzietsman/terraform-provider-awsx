@@ -47,7 +47,41 @@ Then commit the changes to `go.mod` and `go.sum`.
 Using the provider
 ----------------------
 
-Fill this in for each provider
+```hcl
+provider awsx {
+  region = "eu-west-1"
+}
+
+resource controltower_account_vending crypto {
+
+  product_id  = "prod-nl7pbqs2n3rjy"
+  artefact_id = "pa-htxzmae7h7bd2"
+
+  parameters = {
+    SSOUserFirstName          = "RootName"
+    SSOUserLastName           = "RootSurname"
+    SSOUserEmail              = "me+awsx-provider-1-SSO@gmail.com"
+    AccountEmail              = "me+awsx-provider-1-Account@gmail.com"
+    ManagedOrganizationalUnit = "Custom"
+    AccountName               = "awsx-provider-1"
+
+  }
+
+  name = "controltower-provider-1"
+
+  # This will prevent things going sideways if you dynamically 
+  # lookup the latest artefact id
+  lifecycle {
+    ignore_changes = [
+      artefact_id,
+    ]
+  }
+}
+
+output account_id {
+  value = controltower_account_vending.crypto.account_id
+}
+```
 
 Developing the Provider
 ---------------------------
@@ -63,3 +97,7 @@ In order to run the full suite of Acceptance tests, run `make testacc`.
 ```sh
 $ make testacc
 ```
+
+Publishing Providers to the Terraform Registry
+---------------------------
+https://docs.google.com/document/d/1J4p5KFH129wZbSF0XUioDbHSB7uZA-l2o1psLa-3YS4/edit#

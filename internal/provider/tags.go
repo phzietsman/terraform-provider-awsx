@@ -5,7 +5,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/ec2"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/schema"
 
-	"github.com/phzietsman/terraform-provider-awsx/internal/provider/internal/keyvaluetags"
+	"github.com/phzietsman/terraform-provider-awsx/internal/provider/keyvaluetags"
 )
 
 // tagsSchema returns the schema to use for tags.

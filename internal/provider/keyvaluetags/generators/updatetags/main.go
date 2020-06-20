@@ -11,7 +11,7 @@ import (
 	"strings"
 	"text/template"
 
-	"github.com/phzietsman/terraform-provider-awsx/internal/provider/internal/keyvaluetags"
+	"github.com/phzietsman/terraform-provider-awsx/internal/provider/keyvaluetags"
 )
 
 const filename = `update_tags_gen.go`

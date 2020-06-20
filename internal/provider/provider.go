@@ -8,7 +8,7 @@ import (
 	"github.com/hashicorp/terraform-plugin-sdk/terraform"
 	homedir "github.com/mitchellh/go-homedir"
 
-	"github.com/phzietsman/terraform-provider-awsx/internal/provider/internal/keyvaluetags"
+	"github.com/phzietsman/terraform-provider-awsx/internal/provider/keyvaluetags"
 )
 
 // Provider returns a terraform.ResourceProvider.

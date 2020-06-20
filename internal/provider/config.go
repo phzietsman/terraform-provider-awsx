@@ -149,7 +149,7 @@ import (
 	awsbase "github.com/hashicorp/aws-sdk-go-base"
 	"github.com/hashicorp/terraform-plugin-sdk/helper/logging"
 
-	"github.com/phzietsman/terraform-provider-awsx/internal/provider/internal/keyvaluetags"
+	"github.com/phzietsman/terraform-provider-awsx/internal/provider/keyvaluetags"
 )
 
 type Config struct {
